@@ -1,21 +1,21 @@
 const HDWalletProvider = require('truffle-hdwallet-provider');
 const fs = require('fs');
-
 module.exports = {
-  // See <http://truffleframework.com/docs/advanced/configuration>
-  // to customize your Truffle configuration!
   networks: {
     development: {
-      host: "127.0.0.1",     // Localhost (default: none)
-      port: 8545,            // Standard Ethereum port (default: none)
-      network_id: "*",       // Any network (default: none)
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: "*"
+    },
+    firstexperience: {
+      network_id: "*",
+      gas: 0,
+      gasPrice: 0,
+      provider: new HDWalletProvider(fs.readFileSync('c:\\Users\\braya\\source\\repos\\FirstSolidityProject\\MnemonicHelloBlockchain.env', 'utf-8'), "https://firstblockchain.blockchain.azure.com:3200/orjNdZvARFl9VUyeC6kz-tA8"),
+      consortium_id: 1558448678036
     }
   },
-  // Set default mocha options here, use special reporters etc.
-  mocha: {
-    // timeout: 100000
-  },
-  // Configure your compilers
+  mocha: {},
   compilers: {
     solc: {}
   }
