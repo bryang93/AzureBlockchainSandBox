@@ -5,14 +5,14 @@ contract HelloBlockchain
     string private message;
 
     constructor() public {
-        message;
+        message = "hello world!";
     }
 
     function get() public view returns (string memory) {
         return message;
     }
 
-    function set(string memory newMessage) public (
+    function set(string memory newMessage) public {
         message = newMessage;
-    )
+    }
 }
